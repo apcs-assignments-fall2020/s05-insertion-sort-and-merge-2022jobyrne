@@ -29,17 +29,27 @@ public class MyMain {
         int val3 = 0;
         while ((val1 < arr1.length) && ( val2 < arr2.length))
         {
+            if (arr1.length == 0)
+            {
+                return arr2;
+            }
+            if (arr2.length == 0)
+            {
+                return arr1;
+            }
 
             if (arr1[val1] < arr2[val2])
             {
 
                 arr3[val3] = arr1[val1];
+
                 val1++;
             }
             else
             {
                 arr3[val3] = arr2[val2];
-                val2++;
+
+                val2++; 
             }
             val3++;
         }
@@ -47,12 +57,16 @@ public class MyMain {
         {
             arr3[val3] = arr1[val1];
             val1++;
+
+            //val2++;
             val3++;
         }
+        //if (val2 < arr2.length)
         while (val2 < arr2.length)
         {
 
             arr3[val3] = arr2[val2];
+            
             val2++;
             val3++;
         }
